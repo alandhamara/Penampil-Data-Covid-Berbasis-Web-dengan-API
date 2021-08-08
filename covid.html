@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url_for ('static',filename='style 2.css')}}">
+
+    <title>COVID 19 Indonesia</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card" style="background-color: #050A27">
+        <div class="card-body pl-5 pb-5">
+          <nav class="nav mt-3">
+            <h5 class="mr-5">COVID 19 <br> Indonesia</h5>
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/artikel">Artikel</a>
+            <a class="nav-link" href="/provinsi">Data Covid Provinsi</a>
+            <a class="nav-link" href="/rumahsakit">Daftar Rumah Sakit</a>
+          </nav>
+
+          <div class="row main mt-3">
+            <div class="col-md-6">
+              <h1 class="center">Data <span>COVID 19</span> Indonesia</h1>
+              <p>Disusun oleh: </p>
+                <li>Dhamara Alan C (19102139)</li>
+                <li>Muhammad Iqbal Ainu R (19102159)</li>
+                <li>Rido Hot Tua Simamora (19102286)</li>
+              <p>Kita kuat, kita bersatu untuk melawan COVID 19</p>
+              <p>#Lawancorona #Pakaimasker #Dirumahaja</p>
+              <h1> Indonesia </h1>
+            </div>
+          </div>
+          {% for data in data_indo %}
+    
+      <div class="container"></div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+              <img class="card-img-top border dark" src="{{url_for ('static',filename='img/positif.png')}}" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-tittle">Positif : {{data.positif}}</h4>
+            </div>
+          </div>
+        </div>
+
+          <div class="col-md-4">
+            <div class="card" style="width: 20rem;">
+              <img class="card-img-top border dark" src="{{url_for ('static',filename='img/sembuh.png')}}" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-tittle">Sembuh : {{data.sembuh}}</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card" style="width: 20rem;">
+            <img class="card-img-top border dark" src="{{url_for ('static',filename='img/meninggal.png')}}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-tittle">Meninggal : {{data.meninggal}}</h4>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
